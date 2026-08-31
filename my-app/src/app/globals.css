@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Trase Theme Tokens (from style.md) */
+  --trase-primary: #4f7cac;
+  --trase-primary-dark: #34566f;
+  --trase-secondary: #6fa3a0;
+  --trase-accent: #d9a441;
+  --trase-bg: #f8fafc;
+  --trase-card: #ffffff;
+  --trase-text-primary: #1e293b;
+  --trase-text-secondary: #64748b;
+  --trase-border: #e2e8f0;
+  --trase-success: #4d9b72;
+  --trase-error: #c95c5c;
+
+  --background: #f8fafc;
+  --foreground: #1e293b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-trase-primary: var(--trase-primary);
+  --color-trase-primary-dark: var(--trase-primary-dark);
+  --color-trase-secondary: var(--trase-secondary);
+  --color-trase-accent: var(--trase-accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #090d16;
+    --foreground: #f1f5f9;
+    --trase-bg: #090d16;
+    --trase-card: #0f172a;
+    --trase-border: #1e293b;
+    --trase-text-primary: #f8fafc;
+    --trase-text-secondary: #94a3b8;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom smooth scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
